@@ -15,7 +15,7 @@ RUN apt-get install -y      \
         build-essential     \
         environment-modules \
         cmake               \
-        libboost-all-dev
+        libboost-dev
 
 # Create a user named Bob
 RUN useradd -ms /bin/bash bob
