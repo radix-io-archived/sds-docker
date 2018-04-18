@@ -27,7 +27,6 @@ RUN apt-get install -y      \
 # Clone spack
 RUN curl -s -L https://api.github.com/repos/spack/spack/tarball | \
         tar xzC $SPACK_ROOT --strip 1
-#RUN git clone https://github.com/spack/spack
 
 # Load spack env on login
 RUN echo "source $SPACK_ROOT/share/spack/setup-env.sh" >> /etc/profile.d/spack.sh
@@ -39,8 +38,7 @@ COPY packages.yaml $SPACK_ROOT/etc/spack
 RUN git clone https://xgitlab.cels.anl.gov/sds/sds-repo.git
 # Add the repo for spack to use
 RUN spack repo add sds-repo
-# Install margo and its dependencies and load it
+# Install margo and its dependencies
 RUN spack install margo
-RUN spack load margo
 
 CMD /bin/bash -l

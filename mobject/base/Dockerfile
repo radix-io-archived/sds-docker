@@ -12,4 +12,5 @@ RUN apt-get install -y                  \
 
 # Install mobject-store and its dependencies
 RUN spack install mobject ^mpich
-RUN spack load mobject
+
+CMD /bin/bash -l
