@@ -39,7 +39,8 @@ COPY packages.yaml $SPACK_ROOT/etc/spack
 RUN git clone https://xgitlab.cels.anl.gov/sds/sds-repo.git
 # Add the repo for spack to use
 RUN spack repo add sds-repo
-# Install margo and its dependencies
+# Install margo and its dependencies and load it
 RUN spack install margo
+RUN spack load margo
 
 CMD /bin/bash -l
