@@ -39,6 +39,7 @@ To run the container, just execute:
 `docker run -d --shm-size 105m mobject/demo`
 
 `-d` is to run the container in the background (i.e., as a daemon)
+
 `--shm-size <size>` is to set the size of `/dev/shm`, which should be greater than 100M
 
 Run `docker ps` to confirm that the container is properly running. Commands can be ran
