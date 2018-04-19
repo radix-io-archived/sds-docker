@@ -10,15 +10,15 @@ we can regenerate this image and either build it locally or push it to dockerhub
 
 As of this writing, this repo contains the following Docker images:
 
-+ mochi: Image to be used as a base for SDS utility images or tutorials/demos.
-         Installs spack and margo dependencies as root, and configures the spack
-         environment.
-+ mobject/base: Base image for mobject based on the mochi image above. Additionally
-                installs mobject and all of its dependencies (BAKE, sdskv, ssg, etc.)
-                via spack.
-+ mobject/demo: Mobject demo image based on mobject/base. When ran as a container,
-                this demo bootstraps a Mobject cluster by starting a single server
-                daemon.
++ **mochi**: Image to be used as a base for SDS utility images or tutorials/demos.
+             Installs spack and margo dependencies as root, and configures the spack
+             environment.
++ **mobject/base**: Base image for mobject based on the mochi image above. Additionally
+                    installs mobject and all of its dependencies (BAKE, sdskv, ssg, etc.)
+                    via spack.
++ **mobject/demo**: Mobject demo image based on mobject/base. When ran as a container,
+                    this demo bootstraps a Mobject cluster by starting a single server
+                    daemon.
 
 ## Building the Mochi base image
 
