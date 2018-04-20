@@ -10,4 +10,4 @@ spack load mobject
 bake-mkpool -s 100M /dev/shm/mobject.0.dat
 
 # startup the mobject server daemon
-mobject-server-daemon na+sm $MOBJECT_CLUSTER_FILE
+mobject-server-daemon ofi+tcp $MOBJECT_CLUSTER_FILE
