@@ -36,11 +36,18 @@ Make sure to cd to the mobject/demo directory, then run
 
 To run the container, just execute:
 
-`docker run -d --shm-size 105m mobject/demo`
+`docker run -d -v /tmp:/tmp -v /dev/shm:/dev/shm --shm-size 105m mobject/demo:1.0`
 
-`-d` is to run the container in the background (i.e., as a daemon)
+`-d` (optional) is to run the container in the background (i.e., as a daemon)
 
-`--shm-size <size>` is to set the size of `/dev/shm`, which should be greater than 100M
+`-v source:target` bind mounts source directory on the host system to target in the docker container.
+Here we bind mount `/tmp` and `/dev/shm` as the Mobject server and client both need access to files in those directories.
+
+`--shm-size <size>` is to set the size of `/dev/shm`, which needs to be greater than 100M
 
 Run `docker ps` to confirm that the container is properly running. Commands can be ran
 against this running container using `docker exec <container_id> <command>`.
+
+When the container is launched, the Mobject server will write it's cluster config file to
+`/tmp/mobject-cluster.gid` and will use `/dev/shm/mobect.0.dat` for its pmem storage pool.
+The cluster config file is all that is needed by clients to connect to the server.
